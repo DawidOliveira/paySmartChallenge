@@ -9,7 +9,6 @@ class AppWidget extends StatelessWidget {
       title: 'paySmart Movies',
       theme: AppTheme.themeLight,
       darkTheme: AppTheme.themeDark,
-      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
     ).modular();
   }

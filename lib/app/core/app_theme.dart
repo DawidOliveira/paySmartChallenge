@@ -8,12 +8,24 @@ class AppTheme {
   static final themeLight = ThemeData(
     primarySwatch: Colors.blue,
     fontFamily: GoogleFonts.poppins().fontFamily,
+    backgroundColor: Colors.white,
     textTheme: AppTextStyles.textThemeLight,
+    appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+    ),
   );
   static final themeDark = ThemeData(
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.grey,
+    backgroundColor: const Color(0xFF444444),
     scaffoldBackgroundColor: const Color(0xFF333333),
     fontFamily: GoogleFonts.poppins().fontFamily,
     textTheme: AppTextStyles.textThemeDark,
+    appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(
+        color: Colors.white,
+      ),
+    ),
   );
 }

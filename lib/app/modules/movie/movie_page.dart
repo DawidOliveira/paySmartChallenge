@@ -29,9 +29,6 @@ class MoviePageState extends State<MoviePage> {
           style: Theme.of(context).textTheme.headline6,
         ),
         centerTitle: true,
-        leading: const BackButton(
-          color: Colors.black,
-        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

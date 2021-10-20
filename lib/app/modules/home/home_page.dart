@@ -64,9 +64,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     itemBuilder: (context, index) {
                       final movie = store.movies[index];
                       return Material(
-                        color: Colors.white,
+                        color: Theme.of(context).backgroundColor,
                         borderRadius: BorderRadius.circular(4),
                         elevation: 1,
+                        shadowColor: Colors.white,
                         child: InkWell(
                           borderRadius: BorderRadius.circular(4),
                           onTap: () {

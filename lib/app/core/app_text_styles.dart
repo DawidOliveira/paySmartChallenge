@@ -32,7 +32,10 @@ class AppTextStyles {
     ),
     subtitle1: const TextStyle(
       fontWeight: FontWeight.bold,
+      color: Colors.white,
     ),
-    headline6: const TextStyle(),
+    headline6: const TextStyle(
+      color: Colors.white,
+    ),
   );
 }
