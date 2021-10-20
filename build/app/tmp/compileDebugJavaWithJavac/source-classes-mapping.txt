@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/paysmart_movies/BuildConfig.java
- com.example.paysmart_movies.BuildConfig
