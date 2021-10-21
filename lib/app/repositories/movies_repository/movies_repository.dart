@@ -4,7 +4,6 @@ import 'package:paysmart_movies/app/core/constants.dart';
 import 'package:paysmart_movies/app/repositories/local_storage/local_storage.dart';
 import 'package:paysmart_movies/app/shared/models/genre_model.dart';
 import 'package:paysmart_movies/app/shared/models/movie_model.dart';
-import 'package:paysmart_movies/app/shared/utilities/utils.dart';
 
 class MoviesRepository {
   final Connectivity _connectivity;
@@ -78,7 +77,7 @@ class MoviesRepository {
   }
 
   Future<List<Genre>> fetchGenres() async {
-    return Utils.client().get("/genre/movie/list").then((value) {
+    return _dio.get("/genre/movie/list").then((value) {
       return (value.data["genres"] as List)
           .map((e) => Genre.fromMap(e))
           .toList();
