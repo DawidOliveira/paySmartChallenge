@@ -47,10 +47,15 @@ class MoviePageState extends State<MoviePage> {
                     borderRadius: BorderRadius.circular(10),
                     child: Hero(
                       tag: widget.movie.hashCode,
-                      child: CachedNetworkImage(
-                        imageUrl: widget.movie.posterPath!,
-                        fit: BoxFit.fitWidth,
-                      ),
+                      child: Builder(builder: (context) {
+                        if (widget.movie.posterPath != null) {
+                          return CachedNetworkImage(
+                            imageUrl: widget.movie.posterPath!,
+                            fit: BoxFit.fitWidth,
+                          );
+                        }
+                        return const Icon(Icons.movie);
+                      }),
                     ),
                   ),
                 ),
@@ -61,9 +66,7 @@ class MoviePageState extends State<MoviePage> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  "Lançamento: " +
-                      DateFormat("dd/MM/yyyy")
-                          .format(widget.movie.releaseDate!),
+                  "Lançamento: ${widget.movie.releaseDate != null ? DateFormat("dd/MM/yyyy").format(widget.movie.releaseDate!) : 'sem data'}",
                 ),
                 if (widget.movie.genres != null ||
                     widget.movie.genres!.isNotEmpty)
