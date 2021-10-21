@@ -23,6 +23,7 @@ linter:
   # producing the lint.
   rules:
     use_key_in_widget_constructors: false  # Uncomment to disable the `avoid_print` rule
+    unrelated_type_equality_checks: false
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
 # Additional information about this file can be found at
