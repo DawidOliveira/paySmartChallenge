@@ -35,7 +35,7 @@ class MovieCard extends StatelessWidget {
                       width: 130,
                       height: 200,
                       child: Hero(
-                        tag: movie.name!,
+                        tag: movie.hashCode,
                         child: CachedNetworkImage(
                           imageUrl: movie.posterPath!,
                           fit: BoxFit.fitHeight,

@@ -46,7 +46,7 @@ class MoviePageState extends State<MoviePage> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Hero(
-                      tag: widget.movie.name!,
+                      tag: widget.movie.hashCode,
                       child: CachedNetworkImage(
                         imageUrl: widget.movie.posterPath!,
                         fit: BoxFit.fitWidth,
