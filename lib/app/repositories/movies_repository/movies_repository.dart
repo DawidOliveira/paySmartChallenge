@@ -28,7 +28,7 @@ class MoviesRepository {
           data: data.map((e) => e.toJson()).toList());
 
       return data;
-    });
+    }).catchError((e) => throw Exception(e));
   }
 
   Future<List<Movie>> jsonToListMovie(Response<dynamic> value) async {
@@ -62,7 +62,7 @@ class MoviesRepository {
               .where((element) =>
                   element.name!.toLowerCase().contains(text.toLowerCase()))
               .toList();
-        });
+        }).catchError((e) => throw Exception(e));
       } else {
         return [];
       }
@@ -81,6 +81,6 @@ class MoviesRepository {
       return (value.data["genres"] as List)
           .map((e) => Genre.fromMap(e))
           .toList();
-    });
+    }).catchError((e) => throw Exception(e));
   }
 }

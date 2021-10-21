@@ -43,6 +43,22 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                       child: CircularProgressIndicator(),
                     );
                   }
+                  if (store.hasError) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Erro ao carregar os filmes!"),
+                          ElevatedButton(
+                            onPressed: () {
+                              store.loadDeps();
+                            },
+                            child: const Text("Tente novamente"),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
                   return ListView.separated(
                     controller: store.scrollController,
                     itemBuilder: (context, index) {

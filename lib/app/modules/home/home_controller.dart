@@ -15,8 +15,7 @@ class HomeController extends ControllerNotifier {
   final search = TextEditingController();
 
   HomeController(this._moviesRepository, this._connectivity) {
-    loading = true;
-    loadDeps().whenComplete(() => loading = false);
+    loadDeps();
     scrollController.addListener(() async {
       if (await _connectivity.checkConnectivity() != ConnectionState.none) {
         if (scrollController.position.pixels ==
@@ -49,6 +48,15 @@ class HomeController extends ControllerNotifier {
   set page(int value) => _page.value = value;
 
   Future<void> loadDeps() async {
-    movies = await _moviesRepository.fetchMovies(page: page);
+    loading = true;
+    hasError = false;
+    try {
+      movies = await _moviesRepository.fetchMovies(page: page);
+    } catch (e) {
+      hasError = true;
+      throw Exception(e);
+    } finally {
+      loading = false;
+    }
   }
 }

@@ -43,7 +43,9 @@ class MovieInfo extends StatelessWidget {
             right: 0,
             left: 0,
             child: Text(
-              DateFormat("dd/MM/yyyy").format(movie.releaseDate!),
+              movie.releaseDate != null
+                  ? DateFormat("dd/MM/yyyy").format(movie.releaseDate!)
+                  : "Sem data",
               textAlign: TextAlign.center,
             ),
           ),
